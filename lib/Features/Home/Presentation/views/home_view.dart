@@ -1,7 +1,10 @@
 // ignore_for_file: unused_field, unused_element
 
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:qr_code/Features/Home/Presentation/views/widgets/AppBar_Icon.dart';
+import 'package:qr_code/Features/Home/Presentation/views/widgets/FlashToogle_Button.dart';
+import 'package:qr_code/Features/Home/Presentation/views/widgets/ToogleCamera_button.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -11,7 +14,44 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  // متغير للتحكم في الماسح الضوئي
+  MobileScannerController cameraController = MobileScannerController();
 
+  // متغير لتتبع ما إذا كان الماسح يعمل
+  bool _isScanning = false;
+
+  void initState() {
+    super.initState();
+      cameraController = MobileScannerController(
+    detectionSpeed: DetectionSpeed.normal,
+    facing: CameraFacing.back, // البدء بالكاميرا الخلفية
+    torchEnabled: false,
+  );
+
+
+    // بدء التشغيل التلقائي عند فتح الصفحة
+    _startScanning();
+
+  }
+
+  void _startScanning() {
+    setState(() {
+      _isScanning = true;
+    });
+  }
+
+  void _stopScanning() {
+    setState(() {
+      _isScanning = false;
+    });
+  }
+
+  @override
+  void dispose() {
+    // تحرير الموارد عند إغلاق الصفحة
+    cameraController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +61,7 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: Center(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.only(top: 50),
@@ -39,31 +80,36 @@ class _HomeViewState extends State<HomeView> {
                       icon: "assets/Images/clarity_image-gallery-solid.svg",
                     ),
                     Spacer(flex: 3),
-                    AppbarIcon(
-                      OnPressed: () {},
-                      icon: "assets/Images/Vector (41).svg",
-                    ),
+                    FlashToogle_Button(cameraController: cameraController),
                     Spacer(flex: 3),
-                    AppbarIcon(
-                      OnPressed: () {},
-                      icon:
-                          "assets/Images/material-symbols_flip-camera-ios.svg",
-                    ),
+                    ToogleCamera_Button(cameraController: cameraController),
                     Spacer(),
                   ],
                 ),
               ),
-
+              SizedBox(height: 50),
+              SizedBox(
+                height: 500,
+                child: MobileScanner(
+                  controller: MobileScannerController(
+                    detectionSpeed: DetectionSpeed.normal,
+                    facing: CameraFacing.back,
+                  ),
+                  onDetect: (capture) {
+                    final List<Barcode> barcodes = capture.barcodes;
+                    for (final barcode in barcodes) {
+                      print('Barcode found! ${barcode.rawValue}');
+                    }
+                  },
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
-
-  @override
-  void dispose() {
-    // controller?.dispose(); // dispose the controller
-    super.dispose();
-  }
 }
+
+
+
