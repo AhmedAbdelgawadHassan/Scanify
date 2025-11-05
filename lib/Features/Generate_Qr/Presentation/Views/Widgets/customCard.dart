@@ -20,7 +20,7 @@ class Customcard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.secondaryColor,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [BoxShadow(color: Colors.white, blurRadius: 7.5)],
+          boxShadow: [BoxShadow(color:AppColors.primaryColor, blurRadius: 7.5)],
         ),
         child: MaterialButton(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -33,8 +33,7 @@ class Customcard extends StatelessWidget {
               FittedBox(
                 child: Text(
                   cardclass.Text,
-
-                  style: TextStyle(color: AppColors.primaryColor,fontSize: 13,fontWeight: FontWeight.bold),
+                  style: TextStyle(color:AppColors.primaryColor,fontSize: 13,fontWeight: FontWeight.bold),
                 ),
               ),
             ],

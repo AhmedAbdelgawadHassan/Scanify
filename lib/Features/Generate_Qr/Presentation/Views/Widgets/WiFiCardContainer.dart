@@ -32,9 +32,13 @@ class Wificardcontainer extends StatelessWidget {
           Spacer(flex: 2,),
           SvgPicture.asset(AppAssets.WIFIcon1,height: 60,),
           Spacer(flex: 2,),
-          Customtextformfield(label: "Network", hintText: "Enter Network Name", maxLines: 1,ScreenRatio: 0.65,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+          label: "Network", hintText: "Enter Network Name", maxLines: 1,ScreenRatio: 0.65,),
           Spacer(flex: 2,),
-          Customtextformfield(label: "Password", hintText: "Enter Password", maxLines: 1,ScreenRatio: 0.65,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Password", hintText: "Enter Password", maxLines: 1,ScreenRatio: 0.65,),
           Spacer(flex: 2,),
           GenerateqrButtom(onpressed: GenerateQr_Onpressed,),
           Spacer(flex: 3,)

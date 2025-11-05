@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_string_interpolations
+// ignore_for_file: unnecessary_string_interpolations, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:qr_code/Core/Utils/App_Colors.dart';
@@ -9,12 +9,14 @@ class Customtextformfield extends StatelessWidget {
     required this.label,
     required this.hintText,
     required this.maxLines,
-      required this.ScreenRatio,
+      required this.ScreenRatio, 
+       required this.onFieldSubmitted,
   });
   final String label;
   final String hintText;
   final int maxLines;
   final double ScreenRatio;
+  final void Function(String)? onFieldSubmitted;
   @override
   Widget build(BuildContext context) {
     var widthScreen = MediaQuery.of(context).size.width;
@@ -26,6 +28,7 @@ class Customtextformfield extends StatelessWidget {
         SizedBox(
           width: widthScreen*ScreenRatio,    // width of textfield related to container width (Responsive)
           child: TextFormField(
+            onFieldSubmitted: onFieldSubmitted,
             minLines: 1,
             maxLines: maxLines,
             cursorColor: AppColors.primaryColor,

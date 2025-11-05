@@ -32,29 +32,45 @@ class BusinesscardContainer extends StatelessWidget {
           Spacer(),
           SvgPicture.asset(AppAssets.BusinessIcon1,height: 60,),
           Spacer(flex: 2,),
-            Customtextformfield(label: "Company Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.74,),
+            Customtextformfield(
+               onFieldSubmitted: (value){},
+              label: "Company Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.74,),
           Spacer(),
-         Customtextformfield(label: "Industry", hintText: "e.g Food/Agency", maxLines: 1,ScreenRatio: 0.74,),
+         Customtextformfield(
+           onFieldSubmitted: (value){},
+          label: "Industry", hintText: "e.g Food/Agency", maxLines: 1,ScreenRatio: 0.74,),
           Spacer(),
            Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Customtextformfield(label: "Phone", hintText: "Enter Phone", maxLines: 1,ScreenRatio: 0.35,),
+              Customtextformfield(
+                 onFieldSubmitted: (value){},
+                label: "Phone", hintText: "Enter Phone", maxLines: 1,ScreenRatio: 0.35,),
               SizedBox(width: 30,),
-          Customtextformfield(label: "Email", hintText: "Enter Email", maxLines: 1,ScreenRatio: 0.35,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Email", hintText: "Enter Email", maxLines: 1,ScreenRatio: 0.35,),
             ],
           ),
           Spacer(),
-          Customtextformfield(label: "Website", hintText: "Enter Website", maxLines: 1,ScreenRatio: 0.74,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Website", hintText: "Enter Website", maxLines: 1,ScreenRatio: 0.74,),
           Spacer(),
-         Customtextformfield(label: "Address", hintText: "Enter Address", maxLines: 1,ScreenRatio: 0.74,),
+         Customtextformfield(
+           onFieldSubmitted: (value){},
+          label: "Address", hintText: "Enter Address", maxLines: 1,ScreenRatio: 0.74,),
          Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Customtextformfield(label: "City", hintText: "Enter City", maxLines: 1,ScreenRatio: 0.35,),
+              Customtextformfield(
+                 onFieldSubmitted: (value){},
+                label: "City", hintText: "Enter City", maxLines: 1,ScreenRatio: 0.35,),
                SizedBox(width: 30,),
-          Customtextformfield(label: "Country", hintText: "Enter Country", maxLines: 1,ScreenRatio: 0.35,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Country", hintText: "Enter Country", maxLines: 1,ScreenRatio: 0.35,),
             ],
           ),
           Spacer(flex: 4,),

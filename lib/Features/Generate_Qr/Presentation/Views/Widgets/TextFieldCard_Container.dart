@@ -7,8 +7,16 @@ import 'package:qr_code/Features/Generate_Qr/Presentation/Views/Widgets/Generate
 import 'package:qr_code/Features/Generate_Qr/Presentation/Views/Widgets/customTextFormField.dart';
 
 class TextfieldcardContainer extends StatelessWidget {
-  const TextfieldcardContainer({super.key, required this.label, required this.hintText,required  this.maxLines,  this.ScreenRatio=0.65, required this.GenerateQr_Onpressed, required this.image});
-  final String label ;
+  const TextfieldcardContainer({
+    super.key,
+    required this.label,
+    required this.hintText,
+    required this.maxLines,
+    this.ScreenRatio = 0.65,
+    required this.GenerateQr_Onpressed,
+    required this.image,
+  });
+  final String label;
   final String hintText;
   final int maxLines;
   final double ScreenRatio;
@@ -31,14 +39,20 @@ class TextfieldcardContainer extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Spacer(flex: 2,),
-          SvgPicture.asset(image,height: 60,),
-          Spacer(flex: 2,),
-          Customtextformfield(label: "$label", hintText: "$hintText", maxLines: maxLines,ScreenRatio: ScreenRatio,),
-          Spacer(flex: 3,),
-          GenerateqrButtom(onpressed: GenerateQr_Onpressed,),
-          Spacer(flex: 3,)
-
+          Spacer(flex: 2),
+          SvgPicture.asset(image, height: 60),
+          Spacer(flex: 2),
+          Customtextformfield(
+            onFieldSubmitted: (value){},
+            label: "$label",
+            hintText: "$hintText",
+            maxLines: maxLines,
+            ScreenRatio: ScreenRatio,
+          ),
+          Spacer(flex: 3),
+          GenerateqrButtom(onpressed: GenerateQr_Onpressed),
+          Spacer(flex: 3),
+        
         ],
       ),
     );

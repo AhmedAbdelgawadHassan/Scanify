@@ -39,7 +39,13 @@ class TextcardView extends StatelessWidget {
               ),
               Positioned(
                 top: 200,
-                child: TextfieldcardContainer(label: "Text", hintText: "Enter text", maxLines: 1, GenerateQr_Onpressed: (){}, image: AppAssets.TextIcone1)
+                child: TextfieldcardContainer(
+                  label: "Text",
+                  hintText: "Enter text",
+                  maxLines: 1,
+                  GenerateQr_Onpressed: () {},
+                  image: AppAssets.TextIcone1,
+                ),
               ),
             ],
           ),

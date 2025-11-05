@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field, unused_element
-
 import 'package:flutter/material.dart';
 import 'package:qr_code/Core/Utils/App_Colors.dart';
 import 'package:qr_code/Features/Generate_Qr/Presentation/Views/Generate_view.dart';
@@ -7,7 +5,7 @@ import 'package:qr_code/Features/History/Presentation/Views/History_View.dart';
 import 'package:qr_code/Features/Home/Presentation/views/home_view.dart';
 
 class Root extends StatefulWidget {
-   const Root({super.key});
+  const Root({super.key});
 
   @override
   State<Root> createState() => _RootState();
@@ -15,10 +13,13 @@ class Root extends StatefulWidget {
 
 class _RootState extends State<Root> {
   int selectedIndex = 0;
-
   final PageController pageController = PageController();
 
-  List<Widget> pages = [GenerateView(), HomeView(), HistoryView()];
+  final List<Widget> pages = [
+    const GenerateView(),
+    const HomeView(),
+    const HistoryView(),
+  ];
 
   void onItemTapped(int index) {
     pageController.jumpToPage(index);
@@ -36,35 +37,61 @@ class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff191919),
+      backgroundColor: const Color(0xff121212),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
-        onPageChanged: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
         children: pages,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColors.secondaryColor,
-        fixedColor: AppColors.primaryColor,
-        unselectedItemColor: Colors.white,
-        iconSize: 25,
-        unselectedLabelStyle: TextStyle(color: Colors.white),
-        selectedLabelStyle: TextStyle(
-          fontWeight: FontWeight.w800,
-          color: Colors.pink,
-          fontSize: 19,
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF2C2C2C),
+              Color(0xFF1E1E1E),
+              Color(0xFF0D0D0D),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black54,
+              offset: Offset(0, -2),
+              blurRadius: 10,
+            ),
+          ],
         ),
-        selectedIconTheme: IconThemeData(size: 35),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.qr_code_2), label: "Generate"),
-          BottomNavigationBarItem(icon: Icon(Icons.camera_alt),label: "Home",),
-          BottomNavigationBarItem(icon: Icon(Icons.history), label: "History"),
-        ],
-        currentIndex: selectedIndex,
-        onTap: onItemTapped,
+        child: BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: Colors.white70,
+          selectedFontSize: 15,
+          unselectedFontSize: 13,
+          iconSize: 28,
+          selectedIconTheme: const IconThemeData(size: 34),
+          currentIndex: selectedIndex,
+          onTap: onItemTapped,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.qr_code_2_outlined),
+              activeIcon: Icon(Icons.qr_code_2_rounded),
+              label: "Generate",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.qr_code_scanner_outlined),
+              activeIcon: Icon(Icons.qr_code_scanner_rounded),
+              label: "Scan",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history_outlined),
+              activeIcon: Icon(Icons.history_rounded),
+              label: "History",
+            ),
+          ],
+        ),
       ),
     );
   }

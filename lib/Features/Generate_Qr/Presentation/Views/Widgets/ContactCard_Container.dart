@@ -34,9 +34,13 @@ class ContactcardContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Customtextformfield(label: "First Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.35,),
+              Customtextformfield(
+                 onFieldSubmitted: (value){},
+                label: "First Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.35,),
                SizedBox(width: 30,),
-          Customtextformfield(label: "Last Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.35,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Last Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.35,),
             ],
           ),
           Spacer(),
@@ -44,31 +48,47 @@ class ContactcardContainer extends StatelessWidget {
            Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Customtextformfield(label: "Company", hintText: "Enter Company", maxLines: 1,ScreenRatio: 0.35,),
+              Customtextformfield(
+                 onFieldSubmitted: (value){},
+                label: "Company", hintText: "Enter Company", maxLines: 1,ScreenRatio: 0.35,),
                SizedBox(width: 30,),
-          Customtextformfield(label: "Job", hintText: "Enter Job", maxLines: 1,ScreenRatio: 0.35,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Job", hintText: "Enter Job", maxLines: 1,ScreenRatio: 0.35,),
             ],
           ),
           Spacer(),
            Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Customtextformfield(label: "Phone", hintText: "Enter Phone", maxLines: 1,ScreenRatio: 0.35,),
+              Customtextformfield(
+                 onFieldSubmitted: (value){},
+                label: "Phone", hintText: "Enter Phone", maxLines: 1,ScreenRatio: 0.35,),
               SizedBox(width: 30,),
-          Customtextformfield(label: "Email", hintText: "Enter Email", maxLines: 1,ScreenRatio: 0.35,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Email", hintText: "Enter Email", maxLines: 1,ScreenRatio: 0.35,),
             ],
           ),
           Spacer(),
-          Customtextformfield(label: "Website", hintText: "Enter Website", maxLines: 1,ScreenRatio: 0.74,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Website", hintText: "Enter Website", maxLines: 1,ScreenRatio: 0.74,),
           Spacer(),
-         Customtextformfield(label: "Address", hintText: "Enter Address", maxLines: 1,ScreenRatio: 0.74,),
+         Customtextformfield(
+           onFieldSubmitted: (value){},
+          label: "Address", hintText: "Enter Address", maxLines: 1,ScreenRatio: 0.74,),
          Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Customtextformfield(label: "City", hintText: "Enter City", maxLines: 1,ScreenRatio: 0.35,),
+              Customtextformfield(
+                 onFieldSubmitted: (value){},
+                label: "City", hintText: "Enter City", maxLines: 1,ScreenRatio: 0.35,),
                SizedBox(width: 30,),
-          Customtextformfield(label: "Country", hintText: "Enter Country", maxLines: 1,ScreenRatio: 0.35,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Country", hintText: "Enter Country", maxLines: 1,ScreenRatio: 0.35,),
             ],
           ),
           Spacer(flex: 4,),

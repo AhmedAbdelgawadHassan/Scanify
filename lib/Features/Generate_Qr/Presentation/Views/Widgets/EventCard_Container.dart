@@ -32,15 +32,25 @@ class EventcardContainer extends StatelessWidget {
           Spacer(flex: 2,),
           SvgPicture.asset(AppAssets.EventIcon1,height: 60,),
           Spacer(flex: 2,),
-          Customtextformfield(label: "Event Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.65,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Event Name", hintText: "Enter Name", maxLines: 1,ScreenRatio: 0.65,),
           Spacer(flex: 2,),
-          Customtextformfield(label: "Start Date and Time", hintText: "12 Dec 2022, 10:40 pm", maxLines: 1,ScreenRatio: 0.65,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "Start Date and Time", hintText: "12 Dec 2022, 10:40 pm", maxLines: 1,ScreenRatio: 0.65,),
           Spacer(flex: 2,),
-          Customtextformfield(label: "End Date and Time", hintText: "12 Dec 2022, 10:40 pm", maxLines: 1,ScreenRatio: 0.65,),
+          Customtextformfield(
+             onFieldSubmitted: (value){},
+            label: "End Date and Time", hintText: "12 Dec 2022, 10:40 pm", maxLines: 1,ScreenRatio: 0.65,),
           Spacer(flex: 2,),
-         Customtextformfield(label: "Event Location", hintText: "Enter Location", maxLines: 1,ScreenRatio: 0.65,),
+         Customtextformfield(
+           onFieldSubmitted: (value){},
+          label: "Event Location", hintText: "Enter Location", maxLines: 1,ScreenRatio: 0.65,),
          Spacer(flex: 2,),
-         Customtextformfield(label: "Description", hintText: "Enter any details", maxLines: 3, ScreenRatio: 0.65),
+         Customtextformfield(
+           onFieldSubmitted: (value){},
+          label: "Description", hintText: "Enter any details", maxLines: 3, ScreenRatio: 0.65),
          Spacer(flex: 3,),
           GenerateqrButtom(onpressed: GenerateQr_Onpressed,),
           Spacer(flex: 2,)
