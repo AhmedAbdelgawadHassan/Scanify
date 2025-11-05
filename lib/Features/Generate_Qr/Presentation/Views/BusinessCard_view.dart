@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code/Core/Helpers/BuildCircle_Method.dart';
-import 'package:qr_code/Core/Widgets/CustomAppBarCard.dart';
+import 'package:qr_code/Core/Widgets/customAppBarCard.dart';
 import 'package:qr_code/Features/Generate_Qr/Presentation/Views/Widgets/BusinessCard_Container.dart';
 
 class BusinesscardView extends StatelessWidget {

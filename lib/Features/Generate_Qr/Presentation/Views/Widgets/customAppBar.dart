@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code/Core/Widgets/Settings_icon.dart';
+import 'package:qr_code/Core/Widgets/settings_icon.dart';
 
 class Customappbar extends StatelessWidget {
   const Customappbar({super.key});

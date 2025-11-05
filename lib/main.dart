@@ -5,12 +5,12 @@ import 'package:qr_code/Core/Utils/App_Routers.dart';
 
 void main ()
 {
-  runApp(Qr_Code());
+  runApp(Scanify());  // Scanify → من Scan + Simplify
 }
 
 
-class Qr_Code extends StatelessWidget {
-  const Qr_Code({super.key});
+class Scanify extends StatelessWidget {
+  const Scanify({super.key});
 
   @override
   Widget build(BuildContext context) {
